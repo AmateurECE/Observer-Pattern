@@ -11,7 +11,7 @@
 ###
 
 CC=g++
-CPPFLAGS = -g -O0 -Wall -Wextra -I include/
+CPPFLAGS = -g -O0 -Wall -Wextra -I include/ -std=c++11
 OBJS=source/Main.o \
 source/I2CMaster.o \
 source/Devices/Accelerometer.o \
@@ -22,5 +22,9 @@ source/Devices/Thermistor.o
 source/Main: $(OBJS)
 
 $(OBJS):
+
+clean:
+	rm -f `find . | grep '\.o'`
+	rm -f source/Main
 
 ##############################################################################
