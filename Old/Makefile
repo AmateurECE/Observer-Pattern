@@ -3,5 +3,6 @@ CC=g++
 CPPFLAGS= -g -Wall -Wextra -O0
 
 CoffeeShop.exe: $(OBJS)
+	$(CC) $(CPPFLAGS) -o $@ $(OBJS)
 
 $(OBJS):

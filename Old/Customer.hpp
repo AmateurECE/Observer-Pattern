@@ -8,15 +8,16 @@
  *
  * CREATED:	    07/23/2018
  *
- * LAST EDITED:	    07/23/2018
+ * LAST EDITED:	    07/30/2018
  ***/
 
 /******************************************************************************
  * INCLUDES
  ***/
  
- #include "WaitingCustomer.hpp"
- #include <string>
+#include <string>
+
+#include "WaitingCustomer.hpp"
 
 /******************************************************************************
  * CLASS DEFINITIONS
@@ -31,9 +32,9 @@ public:
 
   std::string getName() const { return this->name; }
   std::string getDrinkOrdered() const { return this->drinkOrdered; }
-  private:
+private:
   const std::string & drinkOrdered;
- const std::string & name;
-  };
+  const std::string & name;
+};
 
 /*****************************************************************************/
