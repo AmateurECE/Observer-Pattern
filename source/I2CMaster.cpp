@@ -30,9 +30,9 @@ I2CMaster::~I2CMaster() {
 /* TODO: Maybe this should take a State? */
 void I2CMaster::broadcast(void) const
 {
-  std::vector<iI2CSlave>::iterator iter;
-  for (iter = this->slaves.begin(); iter != this->slaves.end(); it++)
-    iter->notify();
+  for (std::vector<iI2CSlave*>::const_iterator iter = this->slaves.begin();
+       iter != this->slaves.end(); iter++)
+    (*iter)->notify();
 }
 
 void I2CMaster::registerSlave(iI2CSlave * slave)
@@ -43,9 +43,9 @@ void I2CMaster::registerSlave(iI2CSlave * slave)
 
 void I2CMaster::detachAll()
 {
-  std::vector<iI2CSlave>::iterator iter;
-  for (iter = this->slaves.begin(); iter != this->slaves.end(); it++)
-    iter->detach();
+  for (std::vector<iI2CSlave*>::const_iterator iter = this->slaves.begin();
+       iter != this->slaves.end(); iter++)
+    (*iter)->detach();
 }
 
 

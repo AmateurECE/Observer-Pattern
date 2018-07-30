@@ -33,9 +33,9 @@ int main()
   Thermistor	thermo;
 
   master.registerSlave(&accel);
-  // master.registerSlave(humid);
-  // master.registerSlave(mem);
-  // master.registerSlave(thermo);
+  master.registerSlave(&humid);
+  master.registerSlave(&mem);
+  master.registerSlave(&thermo);
 
   master.broadcast();
 }
